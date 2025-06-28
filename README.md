@@ -1,3 +1,7 @@
+# CyberG
+
+This is the landing page for CyberG, an application designed to help seniors stay safe online.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
