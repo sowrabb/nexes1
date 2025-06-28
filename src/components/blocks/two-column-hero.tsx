@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRightIcon, ShieldCheck } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface HeroAction {
