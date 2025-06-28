@@ -1,6 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface TeamMember {
   name: string
@@ -37,10 +38,11 @@ export function TeamSection({
               className="flex flex-col items-center gap-4 text-center"
             >
               <div className="relative h-48 w-48 rounded-full border p-1">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
                   className="h-full w-full rounded-full object-cover"
+                  fill
                 />
               </div>
               <div>

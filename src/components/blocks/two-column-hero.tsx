@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface HeroAction {
   text: string
@@ -64,11 +65,12 @@ export function TwoColumnHero({
                 ))}
             </div>
           </div>
-          <div>
-            <img
+          <div className="relative aspect-[4/5]">
+            <Image
               src={image.src}
               alt={image.alt}
-              className={cn("rounded-xl", image.className)}
+              className={cn("rounded-xl object-cover", image.className)}
+              fill
             />
           </div>
         </div>

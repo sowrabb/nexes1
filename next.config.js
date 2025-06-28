@@ -2,6 +2,9 @@
 const nextConfig = {
   output: "export",
   basePath: "/cyberg",
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig; 
