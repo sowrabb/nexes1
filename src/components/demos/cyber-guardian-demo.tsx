@@ -26,7 +26,7 @@ export function CyberGDemo() {
         },
       ]}
       image={{
-        src: "/cyberg/mockup.png",
+        src: "/mockup.png",
         alt: "iPhone displaying CyberG app",
         className: "w-[70%] mx-auto",
       }}

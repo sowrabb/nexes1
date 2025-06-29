@@ -6,12 +6,12 @@ const teamMembers = [
   {
     name: "Bharath Reddy",
     title: "Founder and CEO",
-    image: "/cyberg/1.png",
+    image: "/1.png",
   },
   {
     name: "Saurab Vokkalkar",
     title: "Co Founder and CTO",
-    image: "/cyberg/2.png",
+    image: "/2.png",
   },
 ]
 
