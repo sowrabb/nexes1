@@ -129,7 +129,7 @@ export function Globe({
   useEffect(() => {
     if (!isMounted || !canvasRef.current) return
     
-    let globe: any = null
+    let globe: { destroy: () => void } | null = null
     let animationId: number | undefined
 
     const initGlobe = async () => {
