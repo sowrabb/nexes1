@@ -23,11 +23,10 @@ export function getImagePath(path: string): string {
     return `/nexes1${cleanPath}`;
   }
   
-  // In development, return path as-is
   return cleanPath;
 }
 
-// Helper function to handle navigation/link paths
+// Helper function to handle navigation links 
 export function getLinkPath(path: string): string {
   // Handle empty or undefined paths
   if (!path) return '';
@@ -40,7 +39,80 @@ export function getLinkPath(path: string): string {
   // For local paths, ensure they start with /
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // Next.js automatically adds basePath from next.config.js to links
-  // So we don't need to manually add it here - just return the clean path
+  // Next.js automatically handles basePath for navigation links, so return as-is
   return cleanPath;
+}
+
+// Detect if user is from India based on timezone and other indicators
+export function detectIndianUser(): boolean {
+  if (typeof window === 'undefined') return false;
+  
+  try {
+    // Check timezone
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const indianTimezones = ['Asia/Kolkata', 'Asia/Calcutta'];
+    
+    if (indianTimezones.includes(timezone)) {
+      return true;
+    }
+    
+    // Check language preferences for Hindi/Indian languages
+    const language = navigator.language.toLowerCase();
+    const indianLanguages = ['hi', 'hi-in', 'en-in', 'ta', 'te', 'bn', 'mr', 'gu', 'kn', 'ml', 'or', 'pa', 'as'];
+    
+    if (indianLanguages.some(lang => language.includes(lang))) {
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error('Error detecting user location:', error);
+    return false;
+  }
+}
+
+// Get pricing based on user location
+export interface PricingData {
+  currency: string;
+  currencySymbol: string;
+  starter: number;
+  growth: number;
+  fullStack: number;
+  deployment: number;
+  starterDisplay: string;
+  growthDisplay: string;
+  fullStackDisplay: string;
+  deploymentDisplay: string;
+}
+
+export function getPricingForUser(): PricingData {
+  const isIndian = detectIndianUser();
+  
+  if (isIndian) {
+    return {
+      currency: 'INR',
+      currencySymbol: '₹',
+      starter: 78000,
+      growth: 122000,
+      fullStack: 140000,
+      deployment: 14000,
+      starterDisplay: '₹78,000',
+      growthDisplay: '₹1,22,000', 
+      fullStackDisplay: '₹1,40,000',
+      deploymentDisplay: '₹14,000',
+    };
+  }
+  
+  return {
+    currency: 'USD',
+    currencySymbol: '$',
+    starter: 999,
+    growth: 1499,
+    fullStack: 1999,
+    deployment: 200,
+    starterDisplay: '$999',
+    growthDisplay: '$1,499',
+    fullStackDisplay: '$1,999',
+    deploymentDisplay: '$200',
+  };
 }

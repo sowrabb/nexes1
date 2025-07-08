@@ -1,3 +1,5 @@
+"use client";
+
 import { Check, MoveRight, PhoneCall } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -8,8 +10,29 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { getPricingForUser, type PricingData } from "@/lib/utils";
 
 function Pricing() {
+  const [pricing, setPricing] = useState<PricingData>({
+    currency: 'USD',
+    currencySymbol: '$',
+    starter: 999,
+    growth: 1499,
+    fullStack: 1999,
+    deployment: 200,
+    starterDisplay: '$999',
+    growthDisplay: '$1,499',
+    fullStackDisplay: '$1,999',
+    deploymentDisplay: '$200',
+  });
+
+  useEffect(() => {
+    // Update pricing based on user location
+    const userPricing = getPricingForUser();
+    setPricing(userPricing);
+  }, []);
+
   return (
     <div id="pricing" className="w-full py-4 sm:py-6 md:py-8">
       <div className="container mx-auto">
@@ -40,11 +63,11 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className="text-4xl">$1,499</span>
+                      <span className="text-4xl">{pricing.growthDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      +$200 App Store & Play Store deployment (optional)
+                      +{pricing.deploymentDisplay} App Store & Play Store deployment (optional)
                     </p>
                   </div>
                   <div className="flex flex-col gap-4 justify-start">
@@ -106,11 +129,11 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className="text-4xl">$999</span>
+                      <span className="text-4xl">{pricing.starterDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      +$200 App Store & Play Store deployment (optional)
+                      +{pricing.deploymentDisplay} App Store & Play Store deployment (optional)
                     </p>
                   </div>
                   <div className="flex flex-col gap-4 justify-start">
@@ -170,11 +193,11 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className="text-4xl">$1,999</span>
+                      <span className="text-4xl">{pricing.fullStackDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      +$200 App Store & Play Store deployment (optional)
+                      +{pricing.deploymentDisplay} App Store & Play Store deployment (optional)
                     </p>
                   </div>
                   <div className="flex flex-col gap-4 justify-start">
