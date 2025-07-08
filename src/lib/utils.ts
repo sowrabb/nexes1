@@ -43,8 +43,30 @@ export function getLinkPath(path: string): string {
   return cleanPath;
 }
 
-// Detect if user is from India based on timezone and other indicators
-export function detectIndianUser(): boolean {
+// Detect if user is from India using IP geolocation API
+export async function detectIndianUserByIP(): Promise<boolean> {
+  if (typeof window === 'undefined') return false;
+  
+  try {
+    // Use FreeIPAPI.com to detect user location
+    const response = await fetch('https://freeipapi.com/api/json');
+    const data = await response.json();
+    
+    // Check if the user is from India
+    if (data && data.countryCode === 'IN') {
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error('Error detecting location via IP:', error);
+    // Fallback to timezone detection if IP API fails
+    return detectIndianUserByTimezone();
+  }
+}
+
+// Fallback detection using timezone and language (keep as backup)
+export function detectIndianUserByTimezone(): boolean {
   if (typeof window === 'undefined') return false;
   
   try {
@@ -66,7 +88,7 @@ export function detectIndianUser(): boolean {
     
     return false;
   } catch (error) {
-    console.error('Error detecting user location:', error);
+    console.error('Error detecting user location via timezone:', error);
     return false;
   }
 }
@@ -85,10 +107,11 @@ export interface PricingData {
   deploymentDisplay: string;
 }
 
-export function getPricingForUser(): PricingData {
-  const isIndian = detectIndianUser();
+export async function getPricingForUser(): Promise<PricingData> {
+  // Try IP-based detection first
+  const isIndianByIP = await detectIndianUserByIP();
   
-  if (isIndian) {
+  if (isIndianByIP) {
     return {
       currency: 'INR',
       currencySymbol: '₹',
