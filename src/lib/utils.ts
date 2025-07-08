@@ -18,7 +18,11 @@ export function getImagePath(path: string): string {
   // For local paths, ensure they start with /
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // In production, Next.js automatically handles basePath for images
+  // In production, manually add basePath for images (Next.js doesn't do this automatically for Image components)
+  if (process.env.NODE_ENV === 'production') {
+    return `/nexes1${cleanPath}`;
+  }
+  
   // In development, return path as-is
   return cleanPath;
 }
@@ -36,11 +40,7 @@ export function getLinkPath(path: string): string {
   // For local paths, ensure they start with /
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // In production, add basePath prefix for internal links
-  if (process.env.NODE_ENV === 'production') {
-    return `/nexes1${cleanPath}`;
-  }
-  
-  // In development, return path as-is
+  // Next.js automatically adds basePath from next.config.js to links
+  // So we don't need to manually add it here - just return the clean path
   return cleanPath;
 }
