@@ -3,6 +3,7 @@
 import { HeroSection } from "@/components/blocks/hero-section"
 import { RainbowButton } from "@/components/ui/rainbow-button"
 import { Button } from "@/components/ui/button"
+import { getImagePath } from "@/lib/utils"
 
 export function HeroSectionDemo() {
   return (
@@ -11,7 +12,7 @@ export function HeroSectionDemo() {
       description="5 Years of Award-winning Innovation. Trusted by 50+ Startups, Scaleups, and Enterprises."
       showGlobe={false}
       showTrustBadges={true}
-      bannerImage="/banner.png"
+      bannerImage={getImagePath("/banner.png")}
     >
       <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center">
         <Button 

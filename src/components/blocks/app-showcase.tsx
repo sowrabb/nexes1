@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { getImagePath } from "@/lib/utils";
 
 export interface AppItem {
   id: string;
@@ -150,10 +152,11 @@ const AppShowcase = ({
               >
                 <a href={item.href} target="_blank" rel="noopener noreferrer" className="group rounded-xl">
                   <div className="group relative h-full min-h-[32rem] max-w-full overflow-hidden rounded-2xl md:aspect-[5/4] lg:aspect-[4/5]">
-                    <img
-                      src={item.image}
+                    <Image
+                      src={getImagePath(item.image)}
                       alt={item.title}
-                      className="absolute h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 h-full bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                                          <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-white md:p-8">
@@ -164,14 +167,18 @@ const AppShowcase = ({
                          {item.title}
                        </div>
                        <div className="flex items-center gap-4">
-                         <img 
+                         <Image 
                            src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                            alt="Download on App Store"
+                           width={120}
+                           height={40}
                            className="h-10 w-auto transition-transform group-hover:scale-105"
                          />
-                         <img 
+                         <Image 
                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                            alt="Get it on Google Play"
+                           width={135}
+                           height={40}
                            className="h-10 w-auto transition-transform group-hover:scale-105"
                          />
                        </div>

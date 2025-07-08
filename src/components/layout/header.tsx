@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getImagePath } from "@/lib/utils";
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
         <div className="flex justify-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/Nexes.svg"
+              src={getImagePath("/Nexes.svg")}
               alt="Nexes"
               width={225}
               height={54}

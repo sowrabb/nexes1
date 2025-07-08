@@ -1,17 +1,18 @@
 "use client"
 
 import { TeamSection } from "@/components/blocks/team-section"
+import { getImagePath } from "@/lib/utils"
 
 const teamMembers = [
   {
     name: "Bharath Reddy",
     title: "Founder and CEO",
-    image: "/1.png",
+    image: getImagePath("/1.png"),
   },
   {
     name: "Saurab Vokkalkar",
     title: "Co Founder and CTO",
-    image: "/2.png",
+    image: getImagePath("/2.png"),
   },
 ]
 

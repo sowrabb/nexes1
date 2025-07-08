@@ -1,6 +1,7 @@
 import { Smartphone } from "lucide-react"
 import { Footer } from "@/components/ui/footer"
 import Image from "next/image"
+import { getImagePath } from "@/lib/utils"
 
 function NexesFooterDemo() {
   return (
@@ -10,7 +11,7 @@ function NexesFooterDemo() {
           <div className="flex items-center gap-2">
             <Smartphone className="h-8 w-8" />
             <Image
-              src="/Nexes.svg"
+              src={getImagePath("/Nexes.svg")}
               alt="Nexes"
               width={105}
               height={26}
