@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { getImagePath } from "@/lib/utils"
 
 export function TrustBadgesDemo() {
   return (
@@ -17,7 +18,7 @@ export function TrustBadgesDemo() {
                 className="transition-transform duration-300 hover:scale-105"
               >
                 <Image
-                  src={`/badges/${badge}.png`}
+                  src={getImagePath(`/badges/${badge}.png`)}
                   alt={`Trust badge ${badge}`}
                   width={280}
                   height={140}

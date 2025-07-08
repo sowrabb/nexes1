@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRightIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getImagePath } from "@/lib/utils";
 import { Globe } from "@/components/ui/globe";
 import Image from "next/image";
 
@@ -91,7 +91,7 @@ export function HeroSection({
                           className="transition-transform duration-300 hover:scale-105 flex-shrink-0"
                         >
                           <Image
-                            src={`/badges/${badge}.png`}
+                            src={getImagePath(`/badges/${badge}.png`)}
                             alt={`Trust badge ${badge}`}
                             width={350}
                             height={175}
@@ -106,7 +106,7 @@ export function HeroSection({
                           className="transition-transform duration-300 hover:scale-105 flex-shrink-0"
                         >
                           <Image
-                            src={`/badges/${badge}.png`}
+                            src={getImagePath(`/badges/${badge}.png`)}
                             alt={`Trust badge ${badge}`}
                             width={350}
                             height={175}
@@ -201,7 +201,7 @@ export function HeroSection({
                     className="transition-transform duration-300 hover:scale-105"
                   >
                     <Image
-                      src={`/badges/${badge}.png`}
+                      src={getImagePath(`/badges/${badge}.png`)}
                       alt={`Trust badge ${badge}`}
                       width={280}
                       height={140}
