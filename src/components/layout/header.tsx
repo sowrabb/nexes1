@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getLinkPath } from "@/lib/utils";
 
 export function Header() {
   return (
@@ -8,7 +8,7 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="flex-1">{/* Left side spacer */}</div>
         <div className="flex justify-center">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={getLinkPath("/")} className="flex items-center space-x-2">
             <Image
               src={getImagePath("/Nexes.svg")}
               alt="Nexes"

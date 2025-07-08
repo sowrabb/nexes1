@@ -2,11 +2,9 @@
 const nextConfig = {
   output: "export",
   trailingSlash: true,
-  // For GitHub Pages deployment, we need basePath only if the repository is not named 'username.github.io'
-  // If repository is named 'sowrabb.github.io', no basePath is needed
-  // If repository is named 'nexes1', basePath '/nexes1' is needed
-  basePath: '',
-  assetPrefix: '',
+  // For GitHub Pages deployment with repository name 'nexes1'
+  basePath: process.env.NODE_ENV === 'production' ? '/nexes1' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/nexes1' : '',
   images: {
     unoptimized: true,
   },

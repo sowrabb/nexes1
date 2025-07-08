@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getLinkPath } from "@/lib/utils";
 
 function Header1() {
     const [isOpen, setOpen] = useState(false);
@@ -18,7 +18,7 @@ function Header1() {
                 </div>
                 
                 <div className="flex justify-center lg:justify-center lg:order-2 absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-auto lg:transform-none">
-                    <Link href="/" className="flex items-center space-x-2">
+                    <Link href={getLinkPath("/")} className="flex items-center space-x-2">
                         <Image
                             src={getImagePath("/Nexes.svg")}
                             alt="Nexes"

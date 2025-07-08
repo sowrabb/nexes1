@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { getLinkPath } from "@/lib/utils"
 
 interface FooterProps {
   logo: React.ReactNode
@@ -36,7 +37,7 @@ export function Footer({
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
           <Link
-            href="/"
+            href={getLinkPath("/")}
             className="flex items-center gap-x-2"
             aria-label={brandName}
           >
