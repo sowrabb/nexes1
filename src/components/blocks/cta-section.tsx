@@ -8,7 +8,7 @@ import { Rocket } from "lucide-react"
 export function CtaSection() {
   return (
     <section className="bg-black text-white">
-      <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <div className="container mx-auto px-4 py-4 sm:px-6 lg:px-8 sm:py-6 md:py-8">
         <div className="mx-auto max-w-2xl text-center">
           <Badge
             variant="outline"

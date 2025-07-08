@@ -9,8 +9,8 @@ export function Header() {
         <div className="flex justify-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/cyberglogo.svg"
-              alt="CyberG"
+              src="/Nexes.svg"
+              alt="Nexes"
               width={225}
               height={54}
             />

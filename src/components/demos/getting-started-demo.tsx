@@ -5,21 +5,21 @@ import { ThreeColumnFeatures } from "@/components/blocks/three-column-features"
 const features = [
   {
     number: "1",
-    title: "Easy Setup & Activation",
+    title: "Book a Consultation",
     description:
-      "Download CyberG. Our simple, guided setup will have you protected in minutes. No complicated configurations needed.",
+      "Schedule a free consultation with our expert team to discuss your app idea, requirements, and vision. We'll analyze your needs and provide personalized recommendations.",
   },
   {
-    number: "2",
-    title: "Automatic Background Protection",
+    number: "2", 
+    title: "Onboarding",
     description:
-      "Once installed, CyberG works tirelessly, actively monitoring for scam calls, suspicious messages, and malicious websites.",
+      "You will provide your detailed needs, target audience, and feature requirements. Our team will conduct thorough research and create design follow-ups to ensure we capture your vision perfectly.",
   },
   {
     number: "3",
-    title: "Stay Alert, Informed & Connected",
+    title: "Publish the App to the App Store",
     description:
-      "Receive instant alerts for threats. Access educational videos and use Guardian Angel to share your location with loved ones.",
+      "Complete your dream app! We'll handle the entire development process, testing, and publish your app to both iOS and Android app stores. Your vision becomes reality.",
   },
 ]
 
@@ -28,8 +28,8 @@ export function GettingStartedDemo() {
     <ThreeColumnFeatures
       id="getting-started"
       badge="Simple & Effective"
-      title="Getting Started is as Easy as 1-2-3"
-      description="We've designed CyberG to be intuitive and straightforward, providing powerful protection without the hassle. Follow these simple steps to secure your digital life."
+      title="Getting Started is easy as 1-2-3"
+      description="We've designed our app development process to be intuitive and straightforward, delivering powerful mobile applications without the hassle. Follow these simple steps to bring your app idea to life."
       features={features}
     />
   )

@@ -47,7 +47,7 @@ const features = [
 
 export function ComprehensiveProtectionDemo() {
   return (
-    <section id="core-features" className="py-12 sm:py-16 md:py-20">
+    <section id="core-features" className="py-4 sm:py-6 md:py-8">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">Core Features</Badge>

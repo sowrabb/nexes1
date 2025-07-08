@@ -1,6 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
+import { ReactNode } from "react"
 
 interface Feature {
   number: string
@@ -10,7 +11,7 @@ interface Feature {
 
 interface ThreeColumnFeaturesProps {
   badge?: string
-  title: string
+  title: string | ReactNode
   description: string
   features: Feature[]
   id?: string
@@ -24,7 +25,7 @@ export function ThreeColumnFeatures({
   id,
 }: ThreeColumnFeaturesProps) {
   return (
-    <section className="py-12 sm:py-16 md:py-20" id={id}>
+    <section className="py-4 sm:py-6 md:py-8" id={id}>
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           {badge && <Badge variant="outline">{badge}</Badge>}

@@ -81,7 +81,7 @@ const Feature108 = ({
   ],
 }: Feature108Props) => {
   return (
-    <section className="py-32">
+    <section className="py-4 sm:py-6 md:py-8">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">{badge}</Badge>

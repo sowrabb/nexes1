@@ -36,7 +36,7 @@ export function TwoColumnHero({
   className,
 }: TwoColumnHeroProps) {
   return (
-    <section className={cn("py-12 sm:py-16 md:py-20", className)}>
+    <section className={cn("py-4 sm:py-6 md:py-8", className)}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="flex flex-col items-start gap-6">

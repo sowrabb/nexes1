@@ -21,7 +21,7 @@ export function TeamSection({
   gridClassName,
 }: TeamSectionProps) {
   return (
-    <section className="py-12 sm:py-16 md:py-20">
+    <section className="py-4 sm:py-6 md:py-8">
       <div className="container mx-auto">
         <h2 className="mb-12 text-center text-3xl font-semibold md:text-4xl">
           {title}
