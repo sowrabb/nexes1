@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// Helper function to handle image paths for root domain deployment
+// Helper function to handle image paths for both development and production
 export function getImagePath(path: string): string {
   // Handle empty or undefined paths
   if (!path) return '';
@@ -16,5 +16,9 @@ export function getImagePath(path: string): string {
   }
   
   // For local paths, ensure they start with /
-  return path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  
+  // In development, return path as-is
+  // In production, we'll handle this at build time with Next.js configuration
+  return cleanPath;
 }
