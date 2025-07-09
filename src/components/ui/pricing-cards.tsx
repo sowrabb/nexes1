@@ -26,24 +26,11 @@ function Pricing() {
     fullStackDisplay: '$1,999',
     deploymentDisplay: '$200',
   });
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Update pricing based on user location using IP geolocation
-    const updatePricing = async () => {
-      try {
-        setIsLoading(true);
-        const userPricing = await getPricingForUser();
-        setPricing(userPricing);
-      } catch (error) {
-        console.error('Error fetching pricing:', error);
-        // Keep default USD pricing if there's an error
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    updatePricing();
+    // Set USD pricing
+    const userPricing = getPricingForUser();
+    setPricing(userPricing);
   }, []);
 
   return (
@@ -57,7 +44,6 @@ function Pricing() {
             </h2>
             <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
               Choose the perfect plan for your mobile app project. All prices include deployment assistance.
-              {isLoading && <span className="text-sm block mt-2 text-blue-600">🌍 Detecting your location for local pricing...</span>}
             </p>
           </div>
           <div className="grid pt-20 text-left grid-cols-1 lg:grid-cols-3 w-full gap-8">
@@ -77,9 +63,7 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className={`text-4xl ${isLoading ? 'animate-pulse' : ''}`}>
-                        {pricing.growthDisplay}
-                      </span>
+                      <span className="text-4xl">{pricing.growthDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
@@ -145,9 +129,7 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className={`text-4xl ${isLoading ? 'animate-pulse' : ''}`}>
-                        {pricing.starterDisplay}
-                      </span>
+                      <span className="text-4xl">{pricing.starterDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">
@@ -211,9 +193,7 @@ function Pricing() {
                 <div className="flex flex-col gap-8 justify-start">
                   <div className="flex flex-col gap-2">
                     <p className="flex flex-row items-center gap-2 text-xl">
-                      <span className={`text-4xl ${isLoading ? 'animate-pulse' : ''}`}>
-                        {pricing.fullStackDisplay}
-                      </span>
+                      <span className="text-4xl">{pricing.fullStackDisplay}</span>
                       <span className="text-sm text-muted-foreground">base price</span>
                     </p>
                     <p className="text-sm text-muted-foreground">

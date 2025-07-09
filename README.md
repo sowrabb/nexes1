@@ -1,126 +1,115 @@
-# Nexes - Top App Development Company
+# Nexes - Mobile App Development Agency
 
-A modern, responsive website for Nexes app development services built with Next.js 15, TypeScript, and Tailwind CSS.
+A modern, professional website for Nexes, a premier mobile app development company. Built with Next.js 15, React 19, and TypeScript, featuring a clean design optimized for conversions.
 
-## 🚀 Live Demo
-
-Visit the live website: [https://sowrabb.github.io/nexes1/](https://sowrabb.github.io/nexes1/)
-
-## ✨ Features
-
-- **Modern Design**: Clean, professional interface with smooth animations
-- **Responsive**: Fully responsive design that works on all devices
-- **Fast Performance**: Built with Next.js 15 for optimal performance
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Professional Content**: Complete business website with all essential pages
-
-## 🏗️ Tech Stack
-
-- **Framework**: Next.js 15.3.4
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: Custom components with shadcn/ui
-- **Icons**: Lucide React
-- **Deployment**: GitHub Pages
-
-## 📄 Pages & Sections
-
-### Main Page
-- Hero Section with trust badges
-- App Showcase (Portfolio)
-- Pricing Section
-- Getting Started (3-step process)
-- Client Testimonials
-- Professional Footer
-
-### Legal
-- Privacy Policy
-- Terms of Service
-- Cookie Policy
-- Automatic redirects from old URLs
-
-## 🛠️ Development
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
+## 🚀 Quick Start
 
 ```bash
 # Clone the repository
-git clone https://github.com/sowrabb/nexes1.git
-
-# Navigate to project directory
-cd nexes1
+git clone https://github.com/yourusername/nexes1.git
+cd nexes1/cyberg
 
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-### Available Scripts
+## 📊 Recent Updates
 
-```bash
-# Development server
-npm run dev
+### Analytics Integration
+- **Google Tag Manager**: Integrated with GTM-W6G5GNB7 for comprehensive analytics
+- **Microsoft Clarity**: Added for user behavior tracking and heatmaps (sa8a6ent8t)
 
-# Production build
-npm run build
+### Pricing Simplification
+- Simplified to USD-only pricing
+- Removed complex IP geolocation features
+- Consistent $999/$1,499/$1,999 pricing structure
 
-# Start production server
-npm start
+### Build & Deployment
+- Fixed font loading issues (removed missing Geist fonts)
+- Configured for static export and GitHub Pages deployment
+- Automatic deployment via GitHub Actions
 
-# Lint code
-npm run lint
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Deployment**: GitHub Pages with automatic CI/CD
+- **Analytics**: Google Tag Manager + Microsoft Clarity
+
+## 📂 Project Structure
+
+```
+cyberg/
+├── .github/workflows/      # GitHub Actions for deployment
+│   └── deploy.yml         # Automated deployment workflow
+├── public/                # Static assets
+├── src/
+│   ├── app/               # Next.js app directory
+│   │   ├── layout.tsx     # Root layout with analytics
+│   │   └── page.tsx       # Home page
+│   ├── components/        # React components
+│   │   ├── blocks/        # Page section components
+│   │   ├── demos/         # Demo components
+│   │   └── ui/            # UI components
+│   └── lib/               # Utility functions
+├── next.config.ts         # Next.js configuration
+└── package.json          # Dependencies and scripts
 ```
 
 ## 🚀 Deployment
 
-This project is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch triggers a new deployment.
+### Automatic Deployment (GitHub Pages)
+1. Push changes to the `main` branch
+2. GitHub Actions automatically builds and deploys
+3. Site updates at `https://yourusername.github.io/nexes1`
 
 ### Manual Deployment
-
 ```bash
-# Build for production
-npm run build
-
-# The static files will be generated in the `out` directory
-```
-
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── app/                 # Next.js app directory
-│   ├── components/          # React components
-│   │   ├── blocks/         # Page section components
-│   │   ├── demos/          # Demo components
-│   │   └── ui/             # UI components
-│   └── lib/                # Utility functions
-├── public/                 # Static assets
-├── .github/workflows/      # GitHub Actions
-└── next.config.js         # Next.js configuration
+npm run build  # Generates static files in /out
 ```
 
 ## 🎨 Design Features
 
-- Clean, modern aesthetic
-- Professional color scheme
-- Smooth animations and transitions
-- Interactive elements
-- Mobile-first responsive design
-- Optimized images and assets
+- **Modern UI**: Clean, professional design with smooth animations
+- **Mobile-First**: Fully responsive across all devices
+- **Performance**: Optimized images, fonts, and loading
+- **SEO-Ready**: Proper meta tags and structured data
 
 ## 📱 Business Features
 
-- **Services**: Mobile & web app development
-- **Portfolio**: Showcase of completed projects
-- **Pricing**: Transparent pricing structure
-- **Contact**: Easy consultation booking via Calendly
+- **Services**: Mobile & web app development showcase
+- **Portfolio**: Client project displays
+- **Pricing**: Transparent USD pricing structure
+- **Contact**: Calendly integration for consultations
 - **Legal**: Complete legal documentation
+
+## 🔧 Configuration
+
+### Environment Variables
+- `NODE_ENV`: Set to 'production' for builds
+- Analytics tracking codes are hardcoded in layout.tsx
+
+### Next.js Configuration
+- Static export enabled for GitHub Pages
+- Image optimization disabled for static hosting
+- Base path configured for subdirectory deployment
+
+## 📈 Analytics Setup
+
+### Google Tag Manager
+- Container ID: `GTM-W6G5GNB7`
+- Tracks page views, conversions, and user interactions
+
+### Microsoft Clarity
+- Project ID: `sa8a6ent8t`
+- Provides heatmaps and session recordings
 
 ## 🤝 Contributing
 
@@ -130,18 +119,30 @@ npm run build
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## 🔍 Troubleshooting
+
+### Build Issues
+- Ensure Node.js 18+ is installed
+- Run `npm ci` for clean dependency installation
+- Check Next.js configuration for proper static export
+
+### Deployment Issues
+- Verify GitHub Pages is enabled in repository settings
+- Check GitHub Actions logs for build errors
+- Ensure CNAME file points to correct domain
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
-**Nexes** - Top App Development Company
+**Nexes** - Premier Mobile App Development
 
-- Website: [https://sowrabb.github.io/nexes1/](https://sowrabb.github.io/nexes1/)
-- Email: legal@nexes.dev
-- Consultation: [Book a Free Quote](https://calendly.com/nexes9/meeting)
+- 🌐 Website: [https://cyberg.app](https://cyberg.app)
+- 📧 Email: hello@nexes.dev
+- 📅 Consultation: [Book a Free Quote](https://calendly.com/nexes9/meeting)
 
 ---
 
-*Built with ❤️ by the Nexes team*
+*Built with ❤️ by the Nexes development team*
