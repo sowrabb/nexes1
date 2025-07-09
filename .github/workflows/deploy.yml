@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
     - name: Checkout 🛎️
@@ -31,11 +35,17 @@ jobs:
       run: |
         npm run build
         touch out/.nojekyll
+        echo "nexes.us" > out/CNAME
 
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: out
+        
     - name: Deploy to GitHub Pages 🚀
       if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: out
-        cname: nexes.us 
+      id: deployment
+      uses: actions/deploy-pages@v2 
