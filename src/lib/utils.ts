@@ -18,9 +18,9 @@ export function getImagePath(path: string): string {
   // For local paths, ensure they start with /
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   
-  // In production, manually add basePath for images (Next.js doesn't do this automatically for Image components)
+  // In production, return path as-is (no base path needed for root domain)
   if (process.env.NODE_ENV === 'production') {
-    return `/nexes1${cleanPath}`;
+    return cleanPath;
   }
   
   return cleanPath;
