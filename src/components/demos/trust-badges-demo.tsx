@@ -9,7 +9,7 @@ export function TrustBadgesDemo() {
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-8">
           <p className="text-sm font-medium text-muted-foreground text-center">
-            Trusted by industry leaders
+            Certified by industry leaders
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((badge) => (

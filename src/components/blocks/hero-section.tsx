@@ -80,7 +80,7 @@ export function HeroSection({
               {showTrustBadges && (
                 <div className="animate-appear opacity-0 delay-400 pt-4 pb-0 sm:pb-4">
                   <p className="text-sm text-muted-foreground text-center mb-1 sm:mb-4">
-                    Trusted by industry leaders
+                    Certified by industry leaders
                   </p>
                   <div className="relative overflow-hidden w-full max-w-full">
                     <div className="flex animate-slide-infinite gap-8 will-change-transform">
@@ -192,7 +192,7 @@ export function HeroSection({
           {showTrustBadges && (
             <div className="relative z-10 flex animate-appear flex-col items-center gap-6 opacity-0 delay-500">
               <p className="text-sm text-muted-foreground">
-                Trusted by industry leaders
+                Certified by industry leaders
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((badge) => (
