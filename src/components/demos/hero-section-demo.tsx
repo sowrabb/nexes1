@@ -9,7 +9,7 @@ export function HeroSectionDemo() {
   return (
     <HeroSection
       title="Top App Development Company"
-      description="5 Years of Award-winning Innovation. Trusted by 50+ Startups, Scaleups, and Enterprises."
+      description="5 Years of Award-winning Innovation. Trusted by 10+ Startups, Scaleups, and Enterprises."
       showGlobe={false}
       showTrustBadges={true}
       bannerImage={getImagePath("/banner.png")}
